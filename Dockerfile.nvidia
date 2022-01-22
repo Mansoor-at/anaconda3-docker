@@ -56,7 +56,7 @@ RUN bzip2
 #RUN locales 
 
 #RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
-    && locale-gen
+    #&& locale-gen
 
 # Configure environment
 ENV ANACONDA_ENV=${ANACONDA_ENV} \
