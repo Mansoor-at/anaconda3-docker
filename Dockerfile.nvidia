@@ -33,7 +33,7 @@ ARG ANACONDA_VERSION="${ANACONDA_CONDA}-${ANACONDA_PATCH}"
 ARG ANACONDA_INSTALLER="${ANACONDA_FLAVOR}-${ANACONDA_VERSION}-${ANACONDA_OS}-${ANACONDA_ARCH}.sh"
 ARG ANACONDA_ENV="base"
 ARG ANACONDA_GID="100"
-ARG ANACONDA_PATH="/usr/local/anaconda3"
+ARG ANACONDA_PATH="/raid/home/A01753093/anaconda3"
 ARG ANACONDA_UID="1000"
 ARG ANACONDA_USER="anaconda"
 
@@ -76,7 +76,7 @@ ENV PATH ${ANACONDA_PATH}/bin:${PATH}
 RUN sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc
 
 # Copy fix-permissions script
-COPY scripts/fix-permissions /usr/local/bin/fix-permissions
+COPY /raid/home/A01753093/scripts/fix-permissions /usr/local/bin/fix-permissions
 
 # Create default user wtih name "anaconda"
 RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su \
