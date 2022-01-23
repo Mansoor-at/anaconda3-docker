@@ -76,7 +76,7 @@ ENV PATH ${ANACONDA_PATH}/bin:${PATH}
 RUN sed -i 's/^#force_color_prompt=yes/force_color_prompt=yes/' /etc/skel/.bashrc
 
 # Copy fix-permissions script
-COPY /var/lib/docker/tmp/docker-builder407825387/raid/home/A01753093/scripts/fix-permissions /usr/local/bin/fix-permissions
+COPY scripts/fix-permissions /usr/local/bin/fix-permissions
 
 # Create default user wtih name "anaconda"
 RUN echo "auth requisite pam_deny.so" >> /etc/pam.d/su \
